@@ -2,7 +2,7 @@ import classes from "./NewPost.module.css";
 import Modal from "../components/Modal";
 import { Link, Form, redirect } from "react-router-dom";
 
-export default function NewPost({ onAddPost }) {
+export default function NewPost() {
   return (
     <Modal>
       <Form method="post" className={classes.form}>
