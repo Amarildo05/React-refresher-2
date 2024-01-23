@@ -12,13 +12,7 @@ export default function NewPost({ onAddPost }) {
         </p>
         <p>
           <label htmlFor="name">Your name</label>
-          <input
-            type="text"
-            id="name"
-            name="author"
-            required
-            onChange={authorChangeHandler}
-          />
+          <input type="text" id="name" name="author" required />
         </p>
         <p className={classes.actions}>
           <Link to=".." type="button">
@@ -31,7 +25,7 @@ export default function NewPost({ onAddPost }) {
   );
 }
 
-export async function action(request) {
+export async function action({ request }) {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData); // { body: '...', author: '...' }
   await fetch("http://localhost:8080/posts", {
